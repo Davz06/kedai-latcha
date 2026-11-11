@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedai Latcha – Kedai Kopi &amp; Roastery</title>
+  <meta name="description" content="Kedai Latcha — kedai kopi dan roastery di Kemang, Jakarta. Menu ringkas pilihan, disangrai sendiri tiap minggu. Pesan via WhatsApp." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kedai Latcha – Kedai Kopi &amp; Roastery" />
+  <meta property="og:description" content="Kopi nikmat, tanpa ribet. Menu andalan disangrai sendiri tiap minggu di Kemang, Jakarta." />
+  <meta property="og:image" content="img/hero-cafe.webp" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Kedai Latcha",
+    "description": "Kedai kopi dan roastery di Kemang, Jakarta.",
+    "url": "https://kedailatcha.com",
+    "telephone": "+628123456789",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Kemang Selatan No. 21",
+      "addressLocality": "Jakarta Selatan",
+      "addressRegion": "DKI Jakarta",
+      "postalCode": "12730",
+      "addressCountry": "ID"
+    },
+    "openingHours": "Mo-Su 07:00-21:00",
+    "servesCuisine": "Coffee",
+    "priceRange": "Rp 26.000 – Rp 35.000"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <header id="navbar">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo" aria-label="Kedai Latcha - Halaman Utama">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+          <path d="M6 10h16v2a8 8 0 01-16 0v-2z" fill="currentColor"/>
+          <path d="M22 10c0 0 2-1 2-3s-2-3-2-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <rect x="8" y="20" width="12" height="2" rx="1" fill="currentColor"/>
+        </svg>
+        <span>Kedai Latcha</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#tim">Tim Kami</a></li>
+          <li><a href="#lokasi">Lokasi</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: cart + hamburger -->
+      <div class="nav-right">
+        <button id="cart-btn" aria-label="Buka keranjang pesanan">
+          🛒 Pesanan (<span id="cart-count">0</span>)
+        </button>
+        <button
+          id="hamburger-btn"
+          class="hamburger-btn"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <rect x="3" y="5" width="18" height="2" rx="1" fill="currentColor"/>
+            <rect x="3" y="11" width="18" height="2" rx="1" fill="currentColor"/>
+            <rect x="3" y="17" width="18" height="2" rx="1" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu Navigasi" hidden>
+    <div class="mobile-nav-header">
+      <button id="mobile-nav-close" aria-label="Tutup menu navigasi">✕</button>
+    </div>
+    <nav aria-label="Navigasi mobile">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#tim">Tim Kami</a></li>
+        <li><a href="#lokasi">Lokasi</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="hero" aria-label="Selamat Datang">
+      <div class="hero-inner">
+
+        <div class="hero-left">
+          <span class="hero-badge">☕ Kedai Kopi &amp; Roastery Kemang</span>
+          <h1>Kopi nikmat, tanpa ribet.</h1>
+          <p>Menu ringkas pilihan, disangrai sendiri tiap minggu. Diseduh fresh saat dipesan untuk kamu nikmati langsung.</p>
+          <div class="hero-buttons">
+            <button id="hero-order-btn" class="btn btn-primary">Pesan Sekarang →</button>
+            <a
+              id="hero-wa-btn"
+              href="#"
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >💬 WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <img
+            src="img/hero-cafe.webp"
+            alt="Suasana Kedai Latcha"
+            loading="lazy"
+            class="hero-img"
+            width="600"
+            height="400"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MENU FAVORIT -->
+    <section id="menu" aria-labelledby="menu-heading">
+      <div class="menu-section-inner">
+        <div class="menu-section-header">
+          <div class="section-header-left">
+            <span class="section-label">MENU FAVORIT</span>
+            <h2 id="menu-heading">Pilihan Ringkas &amp; Segar</h2>
+          </div>
+          <p class="menu-subtitle">4 menu andalan paling sering dipesan minggu ini</p>
+        </div>
+        <div id="menu-grid" class="menu-grid"></div>
+      </div>
+    </section>
+
+    <!-- TIM KAMI -->
+    <section id="tim" aria-labelledby="tim-heading">
+      <div class="tim-section-inner">
+        <div class="tim-section-header">
+          <span class="section-label">TIM KOPI LATCHA</span>
+          <h2 id="tim-heading">Orang-Orang di Balik Seduhanmu</h2>
+          <p class="tim-subtitle">Kenali 5 sosok yang siap menyajikan kopi terbaik untukmu setiap hari</p>
+        </div>
+        <div id="tim-grid" class="tim-grid"></div>
+      </div>
+    </section>
+
+    <!-- CTA KUNJUNGAN -->
+    <section id="lokasi" class="cta-section" aria-label="Kunjungi Kami">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Mampir atau Pesan Antar Hari Ini</h2>
+          <p>Buka setiap hari 07.00 – 21.00 WIB · Jl. Kemang Selatan No. 21, Jakarta</p>
+        </div>
+        <div class="cta-right">
+          <a
+            id="cta-wa-btn"
+            href="#"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >💬 Pesan via WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 Kedai Latcha — Kedai Kopi &amp; Roastery</p>
+      <p class="footer-tagline">Diseduh dengan tenang.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       CART POPUP
+  ═══════════════════════════════════════ -->
+  <div id="cart-popup" role="dialog" aria-modal="true" aria-label="Keranjang Pesanan" hidden>
+    <div class="cart-header">
+      <h3>Pesanan Kamu</h3>
+      <button id="cart-close-btn" aria-label="Tutup keranjang">✕</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div id="cart-empty" hidden>
+      Belum ada pesanan. <a href="#menu" id="back-to-menu">Lihat menu →</a>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span id="cart-total-price">Rp 0</span>
+      </div>
+      <button id="checkout-btn" class="btn btn-primary" disabled>Checkout</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CHECKOUT MODAL
+  ═══════════════════════════════════════ -->
+  <div id="checkout-modal" role="dialog" aria-modal="true" aria-label="Form Checkout" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-panel">
+
+      <div class="modal-header">
+        <h2>Konfirmasi Pesanan</h2>
+        <button id="checkout-close-btn" aria-label="Tutup form checkout">✕</button>
+      </div>
+
+      <form id="checkout-form" novalidate>
+
+        <!-- Nama -->
+        <div class="form-group">
+          <label for="field-nama">Nama</label>
+          <input
+            type="text"
+            id="field-nama"
+            name="nama"
+            placeholder="Nama kamu"
+            autocomplete="name"
+          />
+          <span class="error-msg" id="error-nama"></span>
+        </div>
+
+        <!-- Tipe Pesanan -->
+        <div class="form-group">
+          <label>Tipe Pesanan</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="tipe" value="ambil" /> Ambil di Tempat
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="tipe" value="antar" /> Antar
+            </label>
+          </div>
+          <span class="error-msg" id="error-tipe"></span>
+        </div>
+
+        <!-- Alamat (tampil jika Antar dipilih) -->
+        <div id="alamat-group" class="form-group" hidden>
+          <label for="field-alamat">Alamat Lengkap</label>
+          <textarea
+            id="field-alamat"
+            name="alamat"
+            rows="3"
+            placeholder="Jl. ..."
+          ></textarea>
+          <span class="error-msg" id="error-alamat"></span>
+        </div>
+
+        <!-- Catatan -->
+        <div class="form-group">
+          <label for="field-catatan">Catatan (opsional)</label>
+          <textarea
+            id="field-catatan"
+            name="catatan"
+            rows="2"
+            placeholder="Contoh: gula dikurangi"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Kirim via WhatsApp</button>
+
+        <a
+          id="wa-fallback-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        >Buka WhatsApp manual jika tidak terbuka otomatis</a>
+
+      </form>
+
+      <!-- Cart Clear Prompt -->
+      <div id="cart-clear-prompt" hidden>
+        <p>Pesanan telah dikirim ke WhatsApp! Mau kosongkan keranjang sekarang?</p>
+        <div class="cart-clear-buttons">
+          <button id="btn-clear-cart" class="btn btn-secondary">Kosongkan</button>
+          <button id="btn-keep-cart" class="btn btn-primary">Pertahankan</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
