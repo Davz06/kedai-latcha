@@ -1928,9 +1928,21 @@ footer, .site-footer {
 
   /* Scale cups illustration container smoothly on tablets */
   .cups-illustration {
+    width: calc(100vw - 48px);
+    height: calc((100vw - 48px) * 340 / 700);
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .cups-canvas {
+    width: 700px;
+    height: 340px;
     transform: scale(calc((100vw - 48px) / 700));
-    transform-origin: center center;
-    margin: calc((340px * (1 - (100vw - 48px) / 700)) / -2) auto;
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: calc((100vw - 48px) * 0.057);
   }
 
   .cups-row {
@@ -2134,7 +2146,12 @@ footer, .site-footer {
     transform-origin: top left;
     position: absolute;
     top: 0;
-    left: 0;
+    /* Center cups content: cups span from ~175px to ~445px (center ~310px) in 700px canvas.
+       After scaling, center is at 310 * scale. We want it at container_width/2.
+       Offset = container_width/2 - 310*scale = container_width/2 - 310*(container_width/700)
+             = container_width * (1/2 - 310/700) = container_width * (350-310)/700
+             = container_width * 40/700 ≈ container_width * 0.057 */
+    left: calc(min(300px, calc(100vw - 40px)) * 0.057);
   }
 
   .price-badge-wrap.badge-coffee-wrap {
