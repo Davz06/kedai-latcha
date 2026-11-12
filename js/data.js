@@ -5,85 +5,76 @@
 // ============================================================
 
 const CONFIG = {
-  whatsapp: '628123456789', // Ganti dengan nomor WhatsApp kedai (format: 62xxxxxxxxxx)
-  jamBuka: 'Setiap hari 07.00 – 21.00 WIB',
-  alamat: 'Jl. Kemang Selatan No. 21, Jakarta',
   namaKedai: 'Kedai Latcha',
+  whatsapp: '6285819589125', // Nomor WhatsApp kedai (format: 62xxxxxxxxxx)
+  phoneDisplay: '0858-1958-9125',
+  tagline: 'Coffee Latte 8K · Matcha Latte 10K · Iced Only, dibuat segar tiap pesanan',
+  alamat: 'Citra Indah City, Bukit Palem',
+  lokasi: 'Citra Indah City, Bukit Palem',
+  jamBuka: 'Setiap hari 07.00 – 21.00 WIB',
+  copyright: '© 2025 Kedai Latcha — Coffee & Matcha Latte (Citra Indah City, Bukit Palem)',
 };
 
 const MENU = [
   {
-    id: 'es-kopi-susu',
-    nama: 'Es Kopi Susu Senja',
-    harga: 28000,
-    deskripsi: 'Espresso, susu segar & gula aren organik.',
-    gambar: 'img/menu-es-kopi-susu.webp',
+    id: 'coffee-latte',
+    nama: 'Coffee Latte',
+    harga: 8000,
+    deskripsi: 'Es kopi susu segar racikan khas Kedai Latcha. Creamy, seimbang, manis pas.',
+    gambar: 'img/menu-coffee-latte.webp',
     badge: 'Terfavorit',
     tersedia: true,
   },
   {
-    id: 'americano-cold-brew',
-    nama: 'Americano Cold Brew',
-    harga: 26000,
-    deskripsi: 'Perem 16 jam, fruity & menyegarkan.',
-    gambar: 'img/menu-americano.webp',
-    badge: null,
-    tersedia: true,
-  },
-  {
-    id: 'v60-single-origin',
-    nama: 'V60 Single Origin',
-    harga: 35000,
-    deskripsi: 'Gayo / Kintamani, karakter rasa terang.',
-    gambar: 'img/menu-v60.webp',
-    badge: 'Best Filter',
-    tersedia: true,
-  },
-  {
-    id: 'kopi-latte-oat',
-    nama: 'Kopi Latte Oat',
-    harga: 32000,
-    deskripsi: 'Espresso ganda dengan susu oat premium.',
-    gambar: 'img/menu-latte-oat.webp',
-    badge: null,
+    id: 'matcha-latte',
+    nama: 'Matcha Latte',
+    harga: 10000,
+    deskripsi: 'Pure matcha Jepang berpadu susu segar dingin. Manis lembut, earthy autentik.',
+    gambar: 'img/menu-matcha-latte.webp',
+    badge: 'Best Seller',
     tersedia: true,
   },
 ];
 
 const TIM = [
   {
-    nama: 'Bagas Pratama',
-    jabatan: 'Head Roaster',
-    bio: '7 tahun pengalaman sangrai biji Nusantara.',
-    suka: 'Gayo Honey V60',
-    foto: 'img/tim-bagas.webp',
+    nama: 'Nadia Latcha',
+    jabatan: 'Founder & Recipe Creator',
+    bio: 'Pencipta resep Matcha Latte 10K & Coffee Latte 8K.',
+    suka: 'Matcha Latte 10K',
+    foto: 'img/tim-nadia.webp',
   },
   {
-    nama: 'Rania Salsabila',
-    jabatan: 'Lead Barista',
-    bio: 'Spesialis latte art & racikan gula aren.',
-    suka: 'Es Kopi Senja',
-    foto: 'img/tim-rania.webp',
+    nama: 'Rizky Barista',
+    jabatan: 'Head Barista',
+    bio: 'Barista ramah pengatur takaran manis & es melimpah.',
+    suka: 'Coffee Latte 8K',
+    foto: 'img/tim-rizky.webp',
   },
   {
-    nama: 'Doni Wijaya',
-    jabatan: 'Coffee Specialist',
-    bio: 'Kurator biji kopi langsung dari petani.',
-    suka: 'Toraja Sapan',
-    foto: 'img/tim-doni.webp',
+    nama: 'Siti Rahma',
+    jabatan: 'Quality & Bahan',
+    bio: 'Memastikan susu & matcha selalu segar dan higienis.',
+    suka: 'Matcha Latte 10K',
+    foto: 'img/tim-siti.webp',
   },
   {
-    nama: 'Maya Putri',
-    jabatan: 'Pastry Chef',
-    bio: 'Pembuat roti & dessert pendamping kopi.',
-    suka: 'Cappuccino + Croissant',
-    foto: 'img/tim-maya.webp',
+    nama: 'Bima Putra',
+    jabatan: 'Operasional & Kasir',
+    bio: 'Melayani pesan WhatsApp 0858-1958-9125 dengan cepat.',
+    suka: 'Coffee Latte 8K',
+    foto: 'img/tim-bima.webp',
   },
   {
-    nama: 'Adit Nugroho',
-    jabatan: 'Store Manager',
-    bio: 'Memastikan pengalaman berkedai yang hangat.',
-    suka: 'Americano Cold Brew',
-    foto: 'img/tim-adit.webp',
+    nama: 'Fajar Kurir',
+    jabatan: 'Antar & Pre-Order',
+    bio: 'Kurir sigap siap antar dingin untuk Citra Indah City.',
+    suka: 'Red Velvet Ice',
+    foto: 'img/tim-fajar.webp',
   },
 ];
+
+// Support CommonJS export for testing environments while preserving browser globals
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { CONFIG, MENU, TIM };
+}
