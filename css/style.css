@@ -2130,8 +2130,9 @@ footer, .site-footer {
 
   .cups-illustration {
     order: 1;
-    width: min(300px, calc(100vw - 40px));
-    height: calc(min(300px, calc(100vw - 40px)) * 340 / 700);
+    width: calc(100vw - 40px);
+    /* height = container_width * (cups_content_height / cups_content_width) ≈ 220/270 */
+    height: calc((100vw - 40px) * 0.815);
     overflow: hidden;
     position: relative;
     margin: 0 auto;
@@ -2147,7 +2148,8 @@ footer, .site-footer {
     left: 50%;
     top: 50%;
     transform-origin: 310px 150px;
-    transform: translate(-310px, -150px) scale(calc(min(300px, calc(100vw - 40px)) / 700));
+    /* Scale so cups content (270px wide) fills container width */
+    transform: translate(-310px, -150px) scale(calc((100vw - 40px) / 270));
   }
 
   .price-badge-wrap.badge-coffee-wrap {
