@@ -13,6 +13,20 @@ const CONFIG = {
   lokasi: 'Citra Indah City, Bukit Palem',
   jamBuka: 'Setiap hari 07.00 – 21.00 WIB',
   copyright: '© 2025 Kedai Latcha — Coffee & Matcha Latte (Citra Indah City, Bukit Palem)',
+
+  // URL Webhook Google Apps Script (Bisa ditempel di sini jika sudah dibuat)
+  googleSheetWebhookUrl: '',
+
+  // Opsi Takaran Minuman
+  sugarOptions: ['Normal Sugar', 'Less Sugar'],
+  iceOptions: ['Normal Ice', 'Less Ice'],
+
+  // Metode Pembayaran (Bisa diedit/ditambah sendiri dengan mudah)
+  metodePembayaran: [
+    { id: 'tunai', nama: 'Tunai (Cash)', icon: '💵' },
+    { id: 'dana',  nama: 'DANA',         icon: '💙' },
+    { id: 'gopay', nama: 'GoPay',        icon: '💚' },
+  ],
 };
 
 const MENU = [
@@ -38,39 +52,44 @@ const MENU = [
 
 const TIM = [
   {
-    nama: 'Nadia Latcha',
-    jabatan: 'Founder & Recipe Creator',
-    bio: 'Pencipta resep Matcha Latte 10K & Coffee Latte 8K.',
-    suka: 'Matcha Latte 10K',
-    foto: 'img/tim-nadia.webp',
-  },
-  {
-    nama: 'Rizky Barista',
-    jabatan: 'Head Barista',
-    bio: 'Barista ramah pengatur takaran manis & es melimpah.',
+    nama: 'Mirza Ashabul Annafi Oemar',
+    jabatan: 'Owner Kedai Latcha',
+    kelas: 'XII RPL 1',
+    bio: 'Penggagas utama Kedai Latcha, menghadirkan racikan latte segar berkualitas hemat di Bukit Palem.',
     suka: 'Coffee Latte 8K',
-    foto: 'img/tim-rizky.webp',
+    foto: 'img/tim-mirza.webp',
   },
   {
-    nama: 'Siti Rahma',
-    jabatan: 'Quality & Bahan',
-    bio: 'Memastikan susu & matcha selalu segar dan higienis.',
-    suka: 'Matcha Latte 10K',
-    foto: 'img/tim-siti.webp',
-  },
-  {
-    nama: 'Bima Putra',
-    jabatan: 'Operasional & Kasir',
-    bio: 'Melayani pesan WhatsApp 0858-1958-9125 dengan cepat.',
+    nama: 'Dava Zaky Abdulgani',
+    jabatan: 'Web Developer & Layanan 24 Jam',
+    kelas: 'XII RPL 1',
+    bio: 'Mengembangkan website dan memastikan sistem pemesanan online Kedai Latcha aktif 24 jam.',
     suka: 'Coffee Latte 8K',
-    foto: 'img/tim-bima.webp',
+    foto: 'img/tim-dava.webp',
   },
   {
-    nama: 'Fajar Kurir',
-    jabatan: 'Antar & Pre-Order',
-    bio: 'Kurir sigap siap antar dingin untuk Citra Indah City.',
-    suka: 'Red Velvet Ice',
-    foto: 'img/tim-fajar.webp',
+    nama: 'M. Fadhil Al-Fajri',
+    jabatan: 'Marketing & Supplier Keeper',
+    kelas: 'XII RPL 1',
+    bio: 'Menjaga pasokan bahan baku kopi & matcha selalu segar dan berkualitas tinggi tiap hari.',
+    suka: 'Matcha Latte 10K',
+    foto: 'img/tim-fadhil.webp',
+  },
+  {
+    nama: 'M. Shaquille Ihsan Habibie',
+    jabatan: 'Marketing',
+    kelas: 'XII RPL 1',
+    bio: 'Menyebarkan kesegaran racikan Kedai Latcha ke seluruh Citra Indah City dan sekitarnya.',
+    suka: 'Matcha Latte 10K',
+    foto: 'img/tim-shaquille.webp',
+  },
+  {
+    nama: 'Jiro Nando Zavier',
+    jabatan: 'Marketing & Media Kreatif',
+    kelas: 'XII RPL 1',
+    bio: 'Merancang promosi kreatif dan membangun interaksi hangat bersama para pelanggan setia Latcha.',
+    suka: 'Coffee Latte 8K',
+    foto: 'img/tim-jiro.webp',
   },
 ];
 

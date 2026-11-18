@@ -705,20 +705,20 @@ ul {
 
 /* Cups Illustration */
 .cups-illustration {
-  width: 700px;
-  height: 340px;
+  width: 340px;
   max-width: 100%;
+  aspect-ratio: 269.003 / 220.652;
+  height: auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   flex-shrink: 0;
-  margin: 0 auto;
+  margin: 0;
 }
 
-.cups-canvas {
-  width: 700px;
-  height: 340px;
-  position: relative;
-  flex-shrink: 0;
+.cups-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .cups-illustration svg, .cups-canvas svg {
@@ -1228,6 +1228,26 @@ ul {
   padding: 3px 10px;
   border-radius: var(--radius-pill);
   line-height: normal;
+}
+
+.team-badges-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.class-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 800;
+  background-color: var(--color-coffee-dark);
+  color: var(--color-bg);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  line-height: normal;
+  letter-spacing: 0.5px;
 }
 
 .member-bio, .tim-bio {
@@ -1928,21 +1948,7 @@ footer, .site-footer {
 
   /* Scale cups illustration container smoothly on tablets */
   .cups-illustration {
-    width: calc(100vw - 48px);
-    height: calc((100vw - 48px) * 340 / 700);
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-  }
-
-  .cups-canvas {
-    width: 700px;
-    height: 340px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform-origin: 310px 150px;
-    transform: translate(-310px, -150px) scale(calc((100vw - 48px) / 700));
+    width: min(340px, calc(100vw - 48px));
   }
 
   .cups-row {
@@ -2028,12 +2034,26 @@ footer, .site-footer {
     display: none; /* Hide phone pill from compact top bar */
   }
 
+  .cart-btn-label {
+    display: none; /* Hide text label on mobile, leave emoji + count */
+  }
+
+  #cart-btn, .nav-cart-btn {
+    padding: 8px 10px;
+    gap: 4px;
+  }
+
   .hamburger-btn {
     width: 22px;
     height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .mobile-po-btn {
+    width: 100%;
+    padding: 13px 16px;
   }
 
   /* Poster Hero (mobile-layout.html) */
@@ -2101,7 +2121,7 @@ footer, .site-footer {
   }
 
   .wordmark-lat, .wordmark-cha {
-    font-size: 74px;
+    font-size: clamp(3.4rem, 19vw, 74px);
     line-height: 70px;
     letter-spacing: -2px;
   }
@@ -2130,26 +2150,15 @@ footer, .site-footer {
 
   .cups-illustration {
     order: 1;
-    width: calc(100vw - 40px);
-    /* height = container_width * (cups_content_height / cups_content_width) ≈ 220/270 */
-    height: calc((100vw - 40px) * 0.815);
-    overflow: hidden;
+    width: min(300px, calc(100vw - 40px));
+    max-width: min(300px, calc(100vw - 40px));
+    height: auto;
+    aspect-ratio: 269.003 / 220.652;
+    overflow: visible;
     position: relative;
-    margin: 0 auto;
+    margin: 0;
     flex-basis: 100%;
     transform: none;
-  }
-
-  .cups-canvas {
-    width: 700px;
-    height: 340px;
-    position: absolute;
-    /* Place the canvas center-of-cups (310px, 150px) at container center */
-    left: 50%;
-    top: 50%;
-    transform-origin: 310px 150px;
-    /* Scale so cups content (270px wide) fills container width */
-    transform: translate(-310px, -150px) scale(calc((100vw - 40px) / 270));
   }
 
   .price-badge-wrap.badge-coffee-wrap {
@@ -2225,8 +2234,8 @@ footer, .site-footer {
   .btn-preorder, .btn-hero-preorder, .btn-preorder-hero, .preorder-button {
     width: auto;
     max-width: 100%;
-    padding: 12px 24px;
-    font-size: 14px;
+    padding: 11px 20px;
+    font-size: 13px;
     gap: 8px;
     background-color: var(--color-matcha);
     color: var(--color-white) !important;
@@ -2291,7 +2300,8 @@ footer, .site-footer {
     gap: 10px;
   }
 
-  .card-photo-wrap {
+  .card-photo-wrap, .card-img-wrap, .menu-photo {
+    aspect-ratio: unset;
     height: 180px;
     border-radius: 8px;
     margin-bottom: 0;
@@ -2364,6 +2374,54 @@ footer, .site-footer {
     color: var(--color-coffee-muted);
     margin-top: 10px;
     text-align: left;
+  }
+
+  /* Tentang Section Mobile */
+  #tentang, .about-section {
+    padding: 28px 20px 32px;
+  }
+
+  .about-header {
+    margin-bottom: 20px;
+    gap: 3px;
+  }
+
+  .about-header .section-tag {
+    font-size: 19px;
+  }
+
+  .about-header .section-title {
+    font-size: 24px;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+  }
+
+  .about-subtitle {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .about-grid {
+    gap: 10px;
+  }
+
+  .about-feature-card {
+    padding: 16px 14px;
+    gap: 6px;
+  }
+
+  .feature-icon {
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+  }
+
+  .about-feature-card h3 {
+    font-size: 1rem;
+  }
+
+  .about-feature-card p {
+    font-size: 12px;
+    line-height: 1.4;
   }
 
   /* Team Section (Horizontal Cards matching mobile-layout.html) */
@@ -2449,6 +2507,26 @@ footer, .site-footer {
     background: transparent;
     padding: 0;
     line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+
+  .team-badges-wrap {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .class-badge {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 10px;
+    padding: 2px 7px;
   }
 
   .member-bio {
@@ -2523,10 +2601,11 @@ footer, .site-footer {
 
   .po-phone {
     font-family: var(--font-display);
-    font-size: 27px;
+    font-size: clamp(1.3rem, 6vw, 27px);
     color: var(--color-white);
     letter-spacing: 0.5px;
     line-height: normal;
+    word-break: break-all;
   }
 
   .po-sub {
@@ -2591,5 +2670,20 @@ footer, .site-footer {
     right: 12px;
     bottom: 12px;
     max-height: 85vh;
+  }
+
+  /* Toast Notification Mobile */
+  .toast {
+    bottom: 20px;
+    left: 50%;
+    right: auto;
+    max-width: calc(100vw - 40px);
+    transform: translateX(-50%) translateY(12px);
+    text-align: center;
+    white-space: normal;
+  }
+
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
   }
 }

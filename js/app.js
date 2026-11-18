@@ -311,12 +311,17 @@ function renderTim() {
           '<div class="avatar-frame">' +
             '<img src="' + t.foto + '" alt="Foto ' + t.nama + '" class="avatar-img" loading="lazy" width="200" height="200" />' +
           '</div>' +
-          '<h3 class="member-name">' + t.nama + '</h3>' +
-          '<div class="role-badge">' + t.jabatan + '</div>' +
-          '<p class="member-bio">' + t.bio + '</p>' +
-          '<div class="fav-box">' +
-            '<span class="fav-label">Favorit Racikan:</span>' +
-            '<span class="fav-value">' + t.suka + '</span>' +
+          '<div class="member-info">' +
+            '<h3 class="member-name">' + t.nama + '</h3>' +
+            '<div class="team-badges-wrap">' +
+              '<span class="role-badge">' + t.jabatan + '</span>' +
+              '<span class="class-badge">' + (t.kelas || 'XII RPL 1') + '</span>' +
+            '</div>' +
+            '<p class="member-bio">' + t.bio + '</p>' +
+            '<div class="fav-box">' +
+              '<span class="fav-label">Favorit · </span>' +
+              '<span class="fav-value">' + t.suka + '</span>' +
+            '</div>' +
           '</div>' +
         '</article>'
       );

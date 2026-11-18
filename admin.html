@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasir POS &amp; Pembukuan — Kedai Latcha</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Fonts: Caprasimo, Caveat, Outfit (Persis seperti index.html) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Caveat:wght@400..700&family=Outfit:wght@300..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <header class="site-navbar">
+    <div class="nav-container">
+
+      <!-- Brand Logo Persis index.html -->
+      <a href="index.html" class="brand-logo" aria-label="Kedai Latcha — Beranda">
+        <svg
+          class="brand-icon-svg"
+          viewBox="0 0 26 26"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M13.908 1.092q-.153 .051-.286 .108-.127 .05-.298 .222-.165 .165-.235 .311-.064 .14-.533 2.971l-.464 2.862q0 0-3.459 .026h-3.46l-.184 .076q-.438 .209-.596 .654-.153 .438 .05 .857 .134 .209 .394 .381 .26 .165 .52 .19 .153 0 .178 .013 .032 .012 .032 .089l.908 6.271q.882 6.157 .907 6.341 .235 .908 .94 1.562 .622 .597 1.479 .806 .209 .051 .622 .076h2.704q2.19 0 2.603-.012 .419-.013 .755-.146h.025q.495-.153 .946-.489 .457-.343 .756-.794 .298-.457 .431-1.028 .076-.286 .933-6.373l.857-6.316h.21q.419-.025 .704-.336 .235-.235 .299-.584 .063-.356-.108-.667-.165-.311-.527-.495l-.184-.076-6.526-.026v-.076q0-.057 .362-2.133l.337-2.082 .755-.025q.571 0 .686-.025 .12-.026 .279-.077 .495-.234 .596-.78 .102-.546-.285-.94-.26-.26-.622-.311-.184-.051-1.263-.051-1.08 0-1.238 .051zM18.25 9.801q-.026 .076-.388 2.78l-.387 2.787q-.032 .076-.082 .101-.051 .026-.337 .076-.419 .108-.679 .134-.254 .025-.673 .025-.597 0-1.117-.101-.521-.108-1.168-.369-.806-.311-1.435-.438-1.561-.317-3.142-.057-.342 .083-.355 .07-.013-.013-.362-2.456-.349-2.444-.349-2.527v-.076h9.725q.749 .025 .749 .051zM11.077 16.847q.673 .108 1.587 .444 1.009 .362 1.898 .521 .361 .05 1.155 .05 .793 0 1.104-.05 .311-.051 .311-.026 0 .102-.285 2.108-.286 1.999-.311 2.101-.102 .311-.413 .546l-.032 .025q-.127 .108-.285 .133-.153 .026-.724 .051h-4.424q-.362-.025-.489-.076-.394-.159-.578-.521-.076-.133-.139-.507-.064-.375-.299-2.07l-.336-2.469q-.032-.102 .044-.14 .083-.044 .527-.095 .362-.051 .857-.063 .495-.013 .832 .038z"
+            fill="#5B9E27"
+          />
+        </svg>
+        <div class="brand-text">
+          <span class="brand-sub">KEDAI</span>
+          <span class="brand-name">LATCHA</span>
+        </div>
+        <span class="badge-pos">Kasir POS</span>
+      </a>
+
+      <!-- Status Bar & Web Link -->
+      <div class="nav-actions">
+        <div id="live-clock" class="live-clock">🕒 Memuat jam...</div>
+        <div id="sync-status-badge" class="sync-status offline">
+          <span class="sync-dot"></span> Mode lokal · tersimpan
+        </div>
+        <a href="index.html" class="nav-link-web" target="_blank" rel="noopener noreferrer">
+          Web Pelanggan ↗
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTAINER
+  ═══════════════════════════════════════ -->
+  <main class="admin-container">
+
+    <!-- ─── SUBHEADER / GREETING ──────────── -->
+    <section class="greeting-section">
+      <div>
+        <div class="greeting-eyebrow">Catatan Pesanan Kasir · Shift Harian</div>
+        <h1 class="greeting-title">Selamat bertugas, Barista Latcha.</h1>
+        <div class="greeting-hand" id="greeting-orders-count">
+          pesanan tercatat hari ini — jangan lupa senyum ✨
+        </div>
+      </div>
+      <div class="greeting-meta">
+        <span class="meta-pill">🕒 07.00 – 21.00 WIB</span>
+        <span class="meta-pill" id="current-date-pill">Hari ini</span>
+      </div>
+    </section>
+
+    <!-- ─── 4 METRIC STAT CARDS ───────────── -->
+    <section class="stats-grid" aria-label="Statistik Harian">
+      <!-- Omzet -->
+      <div class="stat-box stat-box-dark">
+        <div class="stat-top">
+          <span class="stat-title">Omzet Hari Ini</span>
+          <span class="stat-icon">💰</span>
+        </div>
+        <div class="stat-num" id="stat-omzet">Rp 0</div>
+        <div class="stat-foot">
+          <span>Semua metode pembayaran</span>
+        </div>
+      </div>
+
+      <!-- Cup Terjual -->
+      <div class="stat-box">
+        <div class="stat-top">
+          <span class="stat-title">Cup Terjual</span>
+          <span class="stat-icon">☕</span>
+        </div>
+        <div class="stat-num" id="stat-cup">0 <small style="font-size:16px; font-weight:600">cup</small></div>
+        <div class="stat-split-bar">
+          <div class="bar-kopi" id="bar-kopi" style="width: 50%"></div>
+          <div class="bar-matcha" id="bar-matcha" style="width: 50%"></div>
+        </div>
+        <div class="stat-foot" id="stat-cup-sub">
+          <span>0 kopi</span>
+          <span>0 matcha</span>
+        </div>
+      </div>
+
+      <!-- Transaksi -->
+      <div class="stat-box">
+        <div class="stat-top">
+          <span class="stat-title">Transaksi</span>
+          <span class="stat-icon">🧾</span>
+        </div>
+        <div class="stat-num" id="stat-trx">0 <small style="font-size:16px; font-weight:600">pesanan</small></div>
+        <div class="stat-foot" id="stat-avg-trx">
+          <span>Rata-rata: Rp 0 per pesanan</span>
+        </div>
+      </div>
+
+      <!-- Takaran Favorit -->
+      <div class="stat-box">
+        <div class="stat-top">
+          <span class="stat-title">Takaran Terbanyak</span>
+          <span class="stat-icon">🍃</span>
+        </div>
+        <div class="stat-num" style="font-size:22px" id="stat-fav-mod">Normal Ice</div>
+        <div class="stat-foot" id="stat-fav-sub">
+          <span>Pilihan rasa pelanggan</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CENTER SECTION: MENU & STRUK ─── -->
+    <section class="pos-center-grid">
+
+      <!-- Kolom Kiri: Menu & Form -->
+      <div>
+        <div class="menu-column-header">
+          <div class="col-heading">
+            Pilih Minuman
+            <span class="col-heading-sub">atur gula &amp; es langsung di kartu</span>
+          </div>
+          <div class="category-tabs" id="category-tabs">
+            <button type="button" class="cat-tab active" data-filter="all">Semua · 2</button>
+            <button type="button" class="cat-tab" data-filter="coffee-latte">Kopi</button>
+            <button type="button" class="cat-tab" data-filter="matcha-latte">Matcha</button>
+          </div>
+        </div>
+
+        <!-- Kartu Menu (Diisi JS) -->
+        <div id="pos-menu-list" class="menu-cards-wrap">
+          <!-- Rendered via js/admin.js -->
+        </div>
+
+        <!-- Input Nama & Pembayaran -->
+        <div class="order-customer-box">
+          <div class="order-inputs-row">
+            <div>
+              <label for="customer-name" class="field-label">Nama Pembeli / Meja</label>
+              <input
+                type="text"
+                id="customer-name"
+                class="clean-input"
+                placeholder="cth: Kak Budi · Blok C"
+                autocomplete="off"
+              />
+            </div>
+            <div>
+              <label for="order-notes" class="field-label">Catatan Tambahan (Opsional)</label>
+              <input
+                type="text"
+                id="order-notes"
+                class="clean-input"
+                placeholder="cth: sedotan 2, pisah es"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div>
+            <span class="field-label">Metode Pembayaran</span>
+            <div id="payment-pills" class="payment-btn-group">
+              <!-- Rendered via js/admin.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Struk Pesanan Live -->
+      <aside aria-label="Struk Pesanan Aktif">
+        <div class="receipt-card">
+          <div class="receipt-header">
+            <div class="receipt-title-box">
+              <span class="receipt-tag">Struk Pesanan</span>
+              <span class="receipt-id" id="receipt-live-id">#LTC-BARU</span>
+            </div>
+            <span class="receipt-status-pill" id="receipt-status-pill">● Belum Disimpan</span>
+          </div>
+
+          <!-- Live Items in Receipt -->
+          <div class="receipt-items-list" id="receipt-live-items">
+            <div class="receipt-empty-note">
+              Belum ada minuman dipilih.<br />Tap tombol + di samping!
+            </div>
+          </div>
+
+          <!-- Customer info on receipt -->
+          <div class="receipt-customer-line" id="receipt-customer-preview">
+            <span>Pelanggan:</span>
+            <span id="receipt-cust-name">-</span>
+          </div>
+
+          <!-- Summary numbers -->
+          <div class="receipt-summary-line">
+            <span>Subtotal (<span id="receipt-total-cups">0</span> cup)</span>
+            <span id="receipt-subtotal-val">Rp 0</span>
+          </div>
+          <div class="receipt-summary-line">
+            <span>Metode Bayar</span>
+            <span id="receipt-pay-name" style="font-weight:700">Tunai</span>
+          </div>
+
+          <!-- Total Final -->
+          <div class="receipt-total-box">
+            <span class="receipt-total-label">Total</span>
+            <span class="receipt-total-val" id="order-total-display">Rp 0</span>
+          </div>
+
+          <!-- Button Save -->
+          <button type="button" id="btn-save-order" class="btn-primary-save" disabled>
+            💾 SIMPAN PESANAN
+          </button>
+
+          <div class="receipt-footer-hand">
+            ~ dibuat segar tiap pesanan ~
+          </div>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- ─── BOTTOM SECTION: BUKU PESANAN LIVE ── -->
+    <section class="book-section" aria-label="Buku Pesanan Hari Ini">
+      <div class="book-header">
+        <div class="book-title-wrap">
+          <h2 class="book-title">Buku Pesanan Hari Ini</h2>
+          <span class="live-indicator">● LIVE</span>
+        </div>
+        <div class="book-actions">
+          <button type="button" id="btn-export-csv" class="btn-outline">
+            📥 Unduh CSV
+          </button>
+          <button type="button" id="btn-clear-data" class="btn-outline" style="color:var(--color-danger); border-color:#FED7D7">
+            🗑️ Bersihkan
+          </button>
+        </div>
+      </div>
+
+      <div class="table-scroller">
+        <table class="log-table">
+          <thead>
+            <tr>
+              <th>Waktu</th>
+              <th>Pembeli</th>
+              <th>Pesanan</th>
+              <th>Takaran (Sugar · Ice)</th>
+              <th>Total</th>
+              <th>Bayar</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="trx-table-body">
+            <!-- Diisi otomatis oleh js/admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast Notifikasi -->
+  <div id="toast-notice" class="toast-notice" role="alert" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

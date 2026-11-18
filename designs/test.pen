@@ -1,0 +1,93 @@
+{
+  "version": "2.22",
+  "children": [
+    {
+      "type": "frame",
+      "id": "o9y8ys",
+      "x": 0,
+      "y": 0,
+      "name": "Coffee Badge",
+      "width": 480,
+      "height": 480,
+      "fill": "#F7F1E6",
+      "cornerRadius": 240,
+      "stroke": "#20160F",
+      "strokeWidth": 2,
+      "layout": "vertical",
+      "gap": 16,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "Y3LKV",
+          "layoutPosition": "absolute",
+          "x": 26,
+          "y": 26,
+          "name": "Inner Ring",
+          "opacity": 0.32,
+          "width": 428,
+          "height": 428,
+          "stroke": "#20160F",
+          "strokeWidth": 1
+        },
+        {
+          "type": "text",
+          "id": "U6CecY",
+          "name": "Est",
+          "fill": "#8A7660",
+          "content": "EST. 2024",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600",
+          "letterSpacing": 3.5
+        },
+        {
+          "type": "icon",
+          "id": "F7GSe9",
+          "name": "Cup Mark",
+          "width": 72,
+          "height": 72,
+          "icon": "coffee",
+          "library": "lucide",
+          "fill": "#20160F"
+        },
+        {
+          "type": "text",
+          "id": "MhdwH",
+          "name": "Wordmark",
+          "fill": "#20160F",
+          "content": "Kedai Latcha",
+          "textAlign": "center",
+          "fontFamily": "Fraunces",
+          "fontSize": 38,
+          "fontWeight": "500",
+          "letterSpacing": -0.5
+        },
+        {
+          "type": "frame",
+          "id": "q7FXY",
+          "name": "Rule",
+          "opacity": 0.4,
+          "width": 24,
+          "height": 1,
+          "fill": "#20160F"
+        },
+        {
+          "type": "text",
+          "id": "SgHsx",
+          "name": "Tagline",
+          "fill": "#6B5A47",
+          "content": "COFFEE  ·  ROASTERS",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 9,
+          "fontWeight": "500",
+          "letterSpacing": 3
+        }
+      ]
+    }
+  ],
+  "fileToken": "bf3c88eb-bcf5-406a-9c9b-48a22144ff85"
+}
